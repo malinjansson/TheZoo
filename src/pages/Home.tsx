@@ -1,7 +1,9 @@
 export const Home = () => {
     return (
         <>
-        <h1>Välkommen till The Zoo</h1>
+        <div className="welcome-container">
+            <h1>Välkommen till The Zoo</h1>
+        </div>
         </>
     );
 };

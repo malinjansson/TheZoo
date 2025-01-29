@@ -1,0 +1,27 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+footer {
+    height: 10vh;
+    background-color: v.$layout-background-color;
+  
+    display: flex;
+    justify-content: space-evenly;
+  
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        font-family: v.$primary-font-family;
+        font-size: 14px;
+        color: v.$primary-color;
+
+        &:hover {
+            font-weight: 500;
+            color: #72bf44;
+        }
+      }
+    }
+  }

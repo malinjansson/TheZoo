@@ -1,0 +1,55 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+header {
+    height: 75px;
+    width: 100%;
+
+    background-color: v.$layout-background-color;
+  
+    nav {
+      height: 100%;
+      padding-left: 2em;
+      padding-right: 2em;
+  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-family: v.$label-font-family;
+        font-size: 24px;
+        color: #72bf44;
+        @include m.forDesktop(desktop) {
+            font-size: 34px;
+        }
+      }
+  
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 1em;
+
+        @include m.forDesktop(desktop) {
+           gap: 1.5em;
+        }
+      }
+  
+      a {
+        font-family: v.$primary-font-family;
+        font-weight: 400;
+        color: v.$primary-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+
+        @include m.forDesktop(desktop) {
+            font-size: 18px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+      }
+    }
+  }

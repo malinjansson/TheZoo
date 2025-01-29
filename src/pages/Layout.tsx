@@ -1,3 +1,4 @@
+import "./../styles/layout.scss";
 import { NavLink, Outlet } from "react-router"
 
 export const Layout = () => {
@@ -5,6 +6,7 @@ export const Layout = () => {
         <>
         <header>
             <nav>
+                <h2>The Zoo</h2>
                 <ul>
                     <li>
                         <NavLink to={"/"}>Hem</NavLink>
