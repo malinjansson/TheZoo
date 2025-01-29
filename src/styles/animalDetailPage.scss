@@ -1,0 +1,17 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.img-detailpage {
+    img {
+        height: auto;
+        width: 90%;
+        border-radius: 10px; 
+        object-fit: cover;
+
+        @include m.forDesktop(desktop) {
+            width: 40%;
+            height: auto;
+        }
+
+    }
+}

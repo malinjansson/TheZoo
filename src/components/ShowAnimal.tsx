@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { IAnimal } from "../models/IAnimal"
 
 interface IShowAnimal {
@@ -10,6 +11,9 @@ export const ShowAnimal = (props: IShowAnimal) => {
             <h3>{props.animal.name}</h3>
             <div className="img-container">
                 <img src={props.animal.imageUrl} alt={props.animal.name} />
+            </div>
+            <div>
+                <Link to={"/animal/" + props.animal.id}>Läs mer...</Link>
             </div>
         </div>
     )
