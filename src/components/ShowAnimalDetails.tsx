@@ -6,7 +6,6 @@ interface IShowAnimalDetailProps {
 }
 
 export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
-
     const navigate = useNavigate();
     
     return (
