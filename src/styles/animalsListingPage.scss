@@ -17,7 +17,7 @@
     margin: 0 auto;
     padding: 10px;
     margin-bottom: 2em;
-    background-color: rgb(244, 170, 170);
+    background-color: v.$isfed-false;
 
     @include m.forDesktop(desktop) {
         width: 30%;

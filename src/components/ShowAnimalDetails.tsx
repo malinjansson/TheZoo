@@ -7,18 +7,22 @@ interface IShowAnimalDetailProps {
 
 export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
     return (
-        <div>
+        <>
+        <button className="return-to-animals">
             <Link to={"/animals"}>Tillbaka</Link>
+        </button>
+        <div className="detail-container">
             <div className="img-detailpage">
                 <img src={props.animal.imageUrl} alt={props.animal.name}/>
             </div>
-            <div>
+            <div className="detail-info">
                 <h3>{props.animal.name}</h3>
                 <span>Födelseår - {props.animal.yearOfBirth}</span>
                 <p>{props.animal.shortDescription}</p>
-                <p>{props.animal.lastFed}</p>
+                <p>Senast matad - {props.animal.lastFed}</p>
                 <button>Mata</button>
             </div>
         </div>
+        </>
     );
 };

@@ -1,17 +1,74 @@
 @use "./variables" as v;
 @use "./mixins" as m;
 
-.img-detailpage {
-    img {
-        height: auto;
+.return-to-animals {
+    display: flex;
+    margin-left: 1.5em;
+    margin-bottom: 2em;
+    background-color: v.$secondary-color;
+    border-style: none;
+    border-radius: 3px;
+    border: 1px solid v.$primary-color;
+
+
+    a {
+        font-family: v.$primary-font-family;
+        font-size: 14px;
+        color: v.$primary-color;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        padding: 5px;
+    }
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+
+    @include m.forDesktop(desktop) {
+        width: 80%;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .img-detailpage {
         width: 90%;
-        border-radius: 10px; 
-        object-fit: cover;
+        margin: 0 auto;
 
         @include m.forDesktop(desktop) {
             width: 40%;
-            height: auto;
         }
+        img {
+            height: auto;
+            width: 100%;
+            border-radius: 10px; 
+            object-fit: cover;
+        }
+    }
+    
+    .detail-info {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        text-align: left;
+        gap: 20px;
 
+        @include m.forDesktop(desktop) {
+            width: 40%;
+        }
+    
+        button {
+            display: flex;
+            justify-content: center;
+            background-color: v.$isfed-false;
+            color: v.$primary-color;
+            padding: 5px;
+            border-style: none;
+            border-radius: 3px;
+    
+            font-family: v.$primary-font-family;
+            font-size: 14px;
+        }
     }
 }
