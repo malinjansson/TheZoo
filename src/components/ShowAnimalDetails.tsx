@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { IAnimalDetails } from "../models/IAnimalDetails";
 
 interface IShowAnimalDetailProps {
@@ -6,10 +6,16 @@ interface IShowAnimalDetailProps {
 }
 
 export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
+
+    const navigate = useNavigate();
+    
     return (
         <>
-        <button className="return-to-animals">
-            <Link to={"/animals"}>Tillbaka</Link>
+        <button className="return-to-animals"  
+            onClick={() => {
+                  navigate("/animals/");
+                }}>
+            Tillbaka
         </button>
         <div className="detail-container">
             <div className="img-detailpage">

@@ -1,7 +1,7 @@
 @use "./variables" as v;
 @use "./mixins" as m;
 
-.return-to-animals {
+button {
     display: flex;
     margin-left: 1.5em;
     margin-bottom: 2em;
@@ -10,15 +10,12 @@
     border-radius: 3px;
     border: 1px solid v.$primary-color;
 
-
-    a {
-        font-family: v.$primary-font-family;
-        font-size: 14px;
-        color: v.$primary-color;
-        letter-spacing: 0.5px;
-        text-decoration: none;
-        padding: 5px;
-    }
+    font-family: v.$primary-font-family;
+    font-size: 14px;
+    color: v.$primary-color;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 5px;
 }
 
 .detail-container {
