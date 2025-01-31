@@ -5,6 +5,4 @@ export interface IAnimalDetails extends IAnimal {
     yearOfBirth: number;
     shortDescription: string;
     medicine: string;
-    isFed: boolean;
-    lastFed: string;
 }

@@ -3,10 +3,15 @@ import { IAnimalDetails } from "../models/IAnimalDetails";
 
 interface IShowAnimalDetailProps {
     animal: IAnimalDetails;
+    fedAnimal: (id: number) => void
 }
 
 export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
     const navigate = useNavigate();
+
+    const handleFeding = () => {
+        props.fedAnimal(props.animal.id);
+    }
     
     return (
         <>
@@ -25,7 +30,11 @@ export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
                 <span>Födelseår - {props.animal.yearOfBirth}</span>
                 <p>{props.animal.shortDescription}</p>
                 <p>Senast matad - {props.animal.lastFed}</p>
-                <button>Mata</button>
+                <button className={props.animal.isFed ? "isfed" : "hungry"}
+                    onClick={handleFeding} 
+                    disabled={props.animal.isFed}>
+                        {props.animal.isFed ? "Matad" : "Hungrig"}
+                </button>
             </div>
         </div>
         </>

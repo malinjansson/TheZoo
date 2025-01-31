@@ -7,7 +7,9 @@ import "./../styles/animalDetailPage.scss";
 
 export const Animal = () => {
     const {id} = useParams();
-    const [animal, setAnimal] = useState<IAnimalDetails>();
+    const [animal, setAnimal] = useState<IAnimalDetails | null>(
+        JSON.parse(localStorage.getItem(`animal_${id}`) || "null")
+    );
 
     useEffect(() => {
         const getData = async () => {
@@ -21,6 +23,14 @@ export const Animal = () => {
         getData();
     })
 
-    return <>{animal && <ShowAnimalDetails animal={animal}/>}</>
+    const fedAnimal = (id: number) => {
+        if (animal && animal.id === id) {
+            setAnimal({...animal, isFed: !animal.isFed, lastFed: new Date().toLocaleString()});
+        }
+    };
+ 
+    localStorage.setItem(`animal_${id}`, JSON.stringify(animal));
+
+    return <>{animal && <ShowAnimalDetails animal={animal} fedAnimal={fedAnimal}/>}</>
     
 };
