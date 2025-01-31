@@ -33,7 +33,7 @@ export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
                 <button className={props.animal.isFed ? "isfed" : "hungry"}
                     onClick={handleFeding} 
                     disabled={props.animal.isFed}>
-                        {props.animal.isFed ? "Matad" : "Hungrig"}
+                        {props.animal.isFed ? "Matad" : "Mata djur"}
                 </button>
             </div>
         </div>
