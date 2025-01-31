@@ -13,7 +13,7 @@ export const ShowAnimal = (props: IShowAnimal) => {
                 <img src={props.animal.imageUrl} alt={props.animal.name} />
             </div>
             <div>
-                <Link to={"/animal/" + props.animal.id}>Läs mer...</Link>
+                <Link to={"/animal/" + props.animal.id}>Gå in till djuret ➜</Link>
             </div>
         </div>
     )
