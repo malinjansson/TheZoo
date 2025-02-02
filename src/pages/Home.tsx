@@ -1,8 +1,10 @@
+import "./../styles/homepage.scss";
+
 export const Home = () => {
     return (
         <>
         <div className="welcome-container">
-            <h1>Välkommen till The Zoo</h1>
+            <h2>Välkommen till The Zoo</h2>
         </div>
         </>
     );
