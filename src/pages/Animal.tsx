@@ -4,6 +4,8 @@ import { getAnimalById } from "../services/animalService";
 import { useParams } from "react-router";
 import { ShowAnimalDetails } from "../components/ShowAnimalDetails";
 import "./../styles/animalDetailPage.scss";
+import fallback1 from './../assets/horse.jpg';
+import fallback2 from './../assets/Chinchilla.jpg';
 
 export const Animal = () => {
     const {id} = useParams();
@@ -15,11 +17,18 @@ export const Animal = () => {
         const getData = async () => {
             if(id) {
                 const data = await getAnimalById(id);
-                setAnimal(data);
+
+                const updatedAnimal = {
+                    ...data, imageUrl:
+                      id === '8' ? fallback1 : 
+                      id === '13' ? fallback2 : 
+                      data.imageUrl
+                  };
+
+                setAnimal(updatedAnimal);
             }
         };
 
-        if(animal) return;
         getData();
     })
 

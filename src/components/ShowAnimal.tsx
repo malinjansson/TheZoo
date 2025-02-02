@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { IAnimal } from "../models/IAnimal"
 
 interface IShowAnimal {
@@ -6,15 +6,20 @@ interface IShowAnimal {
 }
 
 export const ShowAnimal = (props: IShowAnimal) => {
+    const navigate = useNavigate();
+    
     return (
         <div className="animal-card">
             <h3>{props.animal.name}</h3>
             <div className="img-container">
                 <img src={props.animal.imageUrl} alt={props.animal.name} />
             </div>
-            <div>
-                <Link to={"/animal/" + props.animal.id}>Gå in till djuret ➜</Link>
-            </div>
+            <button className="to-the-animal"  
+            onClick={() => {
+                 navigate ("/animal/" + props.animal.id);
+                }}>
+            Gå in till djuret ➜
+            </button>
         </div>
     )
 
