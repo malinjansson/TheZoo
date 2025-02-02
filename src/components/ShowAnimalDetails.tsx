@@ -11,6 +11,7 @@ export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
 
     const handleFeding = () => {
         props.fedAnimal(props.animal.id);
+        console.log(handleFeding);
     }
     
     return (
@@ -27,7 +28,7 @@ export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
             </div>
             <div className="detail-info">
                 <h3>{props.animal.name}</h3>
-                <span>Födelseår - {props.animal.yearOfBirth}</span>
+                <p>Födelseår - {props.animal.yearOfBirth}</p>
                 <p>{props.animal.shortDescription}</p>
                 <p>Senast matad - {props.animal.lastFed}</p>
                 <button className={props.animal.isFed ? "isfed" : "hungry"}

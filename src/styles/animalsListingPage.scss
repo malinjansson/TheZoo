@@ -1,8 +1,6 @@
 @use "./variables" as v;
 @use "./mixins" as m;
 
-@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
-
 .animal-container {
     display: flex;
     flex-direction: column;
@@ -32,7 +30,7 @@
     }
 
     h3 {
-        font-family: "Mynerve", serif;
+        font-family: v.$h3-font-family;
         padding: 10px;
 
         @include m.forDesktop(desktop) {

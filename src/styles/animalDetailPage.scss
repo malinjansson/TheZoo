@@ -16,11 +16,13 @@ button {
     letter-spacing: 0.5px;
     text-decoration: none;
     padding: 5px;
+    margin-top: 2em;
 }
 
 .detail-container {
     display: flex;
     flex-direction: column;
+    
 
     @include m.forDesktop(desktop) {
         width: 80%;
@@ -44,22 +46,36 @@ button {
     }
     
     .detail-info {
-        width: 90%;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        text-align: left;
+        text-align: center;
+        align-items: center;
         gap: 20px;
+        padding: 1em;
 
         @include m.forDesktop(desktop) {
             width: 40%;
+            text-align: left;
+            align-items: flex-start;
         }
-    
+
+        h3 {
+            font-family: v.$h3-font-family;
+        }
+
+        p {
+            font-family: v.$primary-font-family;
+            font-weight: 300;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
         .hungry {
             @include m.fedAnimal;
             background-color: v.$isfed-false;
         }
-
+    
         .isfed {
             @include m.fedAnimal;
             background-color: v.$isfed-true;

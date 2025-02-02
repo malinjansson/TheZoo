@@ -9,14 +9,17 @@
   }
 
 @mixin fedAnimal{
+  width: 90%;
   display: flex;
   justify-content: center;
   color: v.$primary-color;
   margin-left: 0;
+  margin-top: 10px;
   padding: 5px;
   border-style: none;
   border-radius: 3px;
 
   font-family: v.$primary-font-family;
+  font-weight: 500;
   font-size: 14px;
 }
