@@ -1,7 +1,7 @@
 @use "./variables" as v;
 @use "./mixins" as m;
 
-button {
+.return-to-animals {
     display: flex;
     margin-left: 1.5em;
     margin-bottom: 2em;
@@ -17,6 +17,7 @@ button {
     text-decoration: none;
     padding: 5px;
     margin-top: 2em;
+    cursor: pointer;
 }
 
 .detail-container {
@@ -76,6 +77,7 @@ button {
         .hungry {
             @include m.fedAnimal;
             background-color: v.$isfed-false;
+            cursor: pointer;
         }
     
         .isfed {
