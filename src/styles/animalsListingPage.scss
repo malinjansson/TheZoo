@@ -54,21 +54,29 @@
             }
         }
 
-   button {
+    .to-the-animal {
         width: 60%;
         padding: 10px;
         display: flex;
         justify-content: center;
-        margin-top: 10px;
         margin-left: 0;
+        margin-bottom: 1em;
+
+        background-color: v.$secondary-color;
+        border-style: none;
+        border: 1px solid v.$primary-color;
+        border-radius: 3px;
 
         font-family: v.$primary-font-family;
         font-size: 12px;
+        letter-spacing: 0.5px;
         color: v.$primary-color;
         cursor: pointer;
 
         @include m.forDesktop(desktop) {
             font-size: 14px;
+            margin-top: 0.5em;
+            margin-bottom: 2em;
         }
 
    }
