@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { IAnimal } from "../models/IAnimal"
+import { useState } from "react";
 
 interface IShowAnimal {
     animal: IAnimal;
@@ -7,13 +8,23 @@ interface IShowAnimal {
 }
 
 export const ShowAnimal = (props: IShowAnimal) => {
+    const [altText, setAltText] = useState (props.animal.name);
     const navigate = useNavigate();
+
+    const handleUpdatedImage = () => {
+        setAltText(props.animal.name)
+        props.updateAnimalImage();
+    }
+
+    const handleErrorAlt = () => {
+        setAltText("Klicka här för att visa bild"); 
+    };
     
     return (
-        <div className="animal-card" onClick={props.updateAnimalImage}>
+        <div className="animal-card" onClick={handleUpdatedImage}>
             <h3>{props.animal.name}</h3>
             <div className="img-container">
-                <img src={props.animal.imageUrl} alt={props.animal.name} />
+                <img src={props.animal.imageUrl} alt={altText} onError={handleErrorAlt}/>
             </div>
             <button className="to-the-animal"  
             onClick={() => {
