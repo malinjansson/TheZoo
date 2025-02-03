@@ -4,6 +4,7 @@ import { IAnimalDetails } from "../models/IAnimalDetails";
 interface IShowAnimalDetailProps {
     animal: IAnimalDetails;
     fedAnimal: (id: number) => void
+    updateAnimalImage: () => void
 }
 
 export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
@@ -11,7 +12,6 @@ export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
 
     const handleFeding = () => {
         props.fedAnimal(props.animal.id);
-        console.log(handleFeding);
     }
     
     return (
@@ -23,7 +23,7 @@ export const ShowAnimalDetails = (props: IShowAnimalDetailProps) => {
             Tillbaka
         </button>
         <div className="detail-container">
-            <div className="img-detailpage">
+            <div className="img-detailpage" onClick={props.updateAnimalImage}>
                 <img src={props.animal.imageUrl} alt={props.animal.name}/>
             </div>
             <div className="detail-info">

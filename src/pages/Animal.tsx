@@ -4,6 +4,8 @@ import { getAnimalById } from "../services/animalService";
 import { useParams } from "react-router";
 import { ShowAnimalDetails } from "../components/ShowAnimalDetails";
 import "./../styles/animalDetailPage.scss";
+import fallback1 from "./../assets/horse.jpg";
+import fallback2 from "./../assets/Chinchilla.jpg";
 
 export const Animal = () => {
     const {id} = useParams();
@@ -28,9 +30,27 @@ export const Animal = () => {
             setAnimal({...animal, isFed: !animal.isFed, lastFed: new Date().toLocaleString()});
         }
     };
- 
+
+    const updateAnimalImage = () => {
+        if(animal) {
+            if(animal.id === 8) {
+                setAnimal({...animal, imageUrl: fallback1})
+            }
+            if(animal.id === 13) {
+                setAnimal({...animal, imageUrl: fallback2})
+            }
+            else {
+                return animal;
+            }
+        }
+    }
+
     localStorage.setItem(`animal_${id}`, JSON.stringify(animal));
 
-    return <>{animal && <ShowAnimalDetails animal={animal} fedAnimal={fedAnimal}/>}</>
+    return <>{animal && <ShowAnimalDetails 
+        animal={animal} 
+        fedAnimal={fedAnimal}
+        updateAnimalImage={updateAnimalImage}
+        />}</>
     
 };
