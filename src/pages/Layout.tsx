@@ -6,7 +6,7 @@ export const Layout = () => {
         <>
         <header>
             <nav>
-                <h2>The Zoo</h2>
+                <div className="the-zoo"><NavLink to={"/"}>The Zoo</NavLink></div>
                 <ul>
                     <li>
                         <NavLink to={"/"}>Hem</NavLink>
