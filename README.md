@@ -1,51 +1,68 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/OZEr4aYK)
-# React + TypeScript + Vite
+# The Zoo 
+This is a [React](https://react.dev/) application built with [Vite](https://vite.dev/), using TypeScript to display animals from a zoo. The animals are fetched from an API, and the data is stored in localStorage. Users can view a list of animals with their names and short descriptions, and they can interact with the animal details to mark if the animal has been fed.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+* **Animal Page** - Displays a list of animals with their names and a profile image. 
+* **Animal Detail Page** - Clicking on an animal will take you to the detail page with more information about the specific animal. 
+* **Feed Button** - The users can feed the animal on the detail page by clicking a "feed animal"/"mata djur" button. The button will be disabled when the animal has been fed and the feeding status will be updated along with the time the animal was fed. 
+* **localStorage** - The animals data are stored in localStorage, so that the states are maintained even if the page is refreshed.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Router 
+```
+export const router = createBrowserRouter ([
+    {
+        path: "/",
+        element: <Layout/>,
+        errorElement: <NotFound/>,
+        children: [
+            {
+                path: "/",
+                element: <Home/>,
+            },
+            {
+                path: "/animals",
+                element: <Animals/>,
+            },
+            {
+                path: "/animal/:id",
+                element: <Animal/>,
+            },
+        ]
+    }
+])
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Demo 
+![image](./demo/1.png)
+![image](./demo/2.png)
+![image](./demo/3.png)
+![image](./demo/4.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Mobile view
+<p>
+  <img src="./demo/7.png" width="300" height="520" />
+  <img src="./demo/5.png" width="300" height="520" />
+  <img src="./demo/6.png" width="300" height="520" />
+</p>
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Installation
+  ### 1. Clone this repository 
+  ```
+  git clone https://github.com/malinjansson/TheZoo.git
+  ```
+
+  ### 2. Navigate to the project folder
+  ```
+  cd TheZoo
+  ```
+
+  ### 3. Install dependencies 
+  ```
+  npm install
+  ```
+
+  ### 4. Run the application
+  ```
+  npm run dev 
+  ```
+  The application will be available at local: http://localhost:5173/
